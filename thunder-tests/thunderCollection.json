@@ -1,0 +1,23 @@
+[
+  {
+    "_id": "4a45b80f-381f-4637-a0f8-e6362dac4640",
+    "colName": "Motherboard",
+    "created": "2022-10-31T20:06:36.070Z",
+    "sortNum": 10000,
+    "folders": []
+  },
+  {
+    "_id": "9c97fa05-80d6-47ff-b3bc-a1567af5b50e",
+    "colName": "GraphicsCard",
+    "created": "2022-10-31T20:33:18.416Z",
+    "sortNum": 20000,
+    "folders": []
+  },
+  {
+    "_id": "763f0968-37be-4a46-8abc-3f8349892299",
+    "colName": "Processor",
+    "created": "2022-10-31T20:36:41.019Z",
+    "sortNum": 30000,
+    "folders": []
+  }
+]

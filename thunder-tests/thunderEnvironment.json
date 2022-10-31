@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "01daf56b-011d-4ede-b695-2239ccbf8f23",
+    "name": "local",
+    "default": true,
+    "sortNum": 10000,
+    "created": "2022-10-31T20:22:50.570Z",
+    "modified": "2022-10-31T20:23:02.719Z",
+    "data": [
+      {
+        "name": "BASE_PATH",
+        "value": "http://localhost/PJ3/montapc-backend/"
+      }
+    ]
+  }
+]

@@ -1,0 +1,139 @@
+[
+  {
+    "_id": "6d3a4c69-a315-4c91-8051-a7d29e88f032",
+    "colId": "4a45b80f-381f-4637-a0f8-e6362dac4640",
+    "containerId": "",
+    "name": "create",
+    "url": "{{BASE_PATH}}motherboard/create",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-10-31T20:06:36.073Z",
+    "modified": "2022-10-31T20:23:40.814Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\":\"motherboard\",\n  \"description\":\"test descip\",\n  \"socket\":\"lga2003\",\n  \"typeMemory\":\"DDR3\",\n  \"pciExpress\":\"3.0\",\n  \"price\":\"1200,00\",\n  \"image\":\"image.png\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "11343e77-3ba6-46db-ba50-0856588f7df6",
+    "colId": "4a45b80f-381f-4637-a0f8-e6362dac4640",
+    "containerId": "",
+    "name": "list",
+    "url": "{{BASE_PATH}}motherboard/list",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-10-31T20:09:01.335Z",
+    "modified": "2022-10-31T20:23:48.519Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "7ccb3947-e1ea-44b5-b7dd-4961de428d36",
+    "colId": "4a45b80f-381f-4637-a0f8-e6362dac4640",
+    "containerId": "",
+    "name": "delete",
+    "url": "{{BASE_PATH}}motherboard/delete",
+    "method": "DELETE",
+    "sortNum": 30000,
+    "created": "2022-10-31T20:11:34.102Z",
+    "modified": "2022-10-31T20:29:16.890Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"id\":\"2\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "6bc3d700-0159-482b-af4e-17cb47161f1e",
+    "colId": "9c97fa05-80d6-47ff-b3bc-a1567af5b50e",
+    "containerId": "",
+    "name": "create",
+    "url": "{{BASE_PATH}}graphicscard/create",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-10-31T20:33:18.418Z",
+    "modified": "2022-10-31T20:34:24.487Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\":\"graphics test\",\n  \"description\":\"graphiuc descpt\",\n  \"pciExpress\":\"3.0\",\n  \"price\":\"90,00\",\n  \"image\":\"graphic.png\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "38291dbd-dfc3-4087-bb9e-1706dbdf225a",
+    "colId": "9c97fa05-80d6-47ff-b3bc-a1567af5b50e",
+    "containerId": "",
+    "name": "list",
+    "url": "{{BASE_PATH}}graphicscard/list",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-10-31T20:35:01.705Z",
+    "modified": "2022-10-31T20:35:01.705Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "08f3c15c-1606-4b25-a5d6-ddd33ae28143",
+    "colId": "9c97fa05-80d6-47ff-b3bc-a1567af5b50e",
+    "containerId": "",
+    "name": "delete",
+    "url": "{{BASE_PATH}}graphicscard/delete",
+    "method": "DELETE",
+    "sortNum": 30000,
+    "created": "2022-10-31T20:35:53.575Z",
+    "modified": "2022-10-31T20:36:13.297Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"id\":\"2\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "6b81e6c8-efca-48e1-8cc7-2d6a98542176",
+    "colId": "763f0968-37be-4a46-8abc-3f8349892299",
+    "containerId": "",
+    "name": "create",
+    "url": "{{BASE_PATH}}processor/create",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-10-31T20:45:42.889Z",
+    "modified": "2022-10-31T20:45:42.889Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\":\"processor test\",\n  \"description\":\"processor top descpt\",\n  \"socket\":\"LGA113\",\n  \"typeMemory\":\"DDR4\",\n  \"pciExpress\":\"3.0\",\n  \"price\":\"500,00\",\n  \"imag\":\"processor.png\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "4adc9266-a9f1-4dae-ae2e-47a44bbaa6c7",
+    "colId": "763f0968-37be-4a46-8abc-3f8349892299",
+    "containerId": "",
+    "name": "list",
+    "url": "{{BASE_PATH}}processor/list",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-10-31T20:48:39.600Z",
+    "modified": "2022-10-31T20:48:39.600Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  }
+]
