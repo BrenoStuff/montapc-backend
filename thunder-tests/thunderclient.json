@@ -41,12 +41,12 @@
     "method": "DELETE",
     "sortNum": 30000,
     "created": "2022-10-31T20:11:34.102Z",
-    "modified": "2022-10-31T20:29:16.890Z",
+    "modified": "2022-11-01T18:26:48.861Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"id\":\"2\"\n}",
+      "raw": "{\n  \"id\":\"7\"\n}",
       "form": []
     },
     "tests": []
@@ -134,6 +134,82 @@
     "modified": "2022-10-31T20:48:39.600Z",
     "headers": [],
     "params": [],
+    "tests": []
+  },
+  {
+    "_id": "e330caeb-15d1-4dac-92cb-7927985d85f2",
+    "colId": "763f0968-37be-4a46-8abc-3f8349892299",
+    "containerId": "",
+    "name": "delete",
+    "url": "{{BASE_PATH}}processor/delete",
+    "method": "DELETE",
+    "sortNum": 30000,
+    "created": "2022-11-01T17:30:00.566Z",
+    "modified": "2022-11-01T17:30:00.566Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"id\":\"3\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "5d1e2377-ee9c-40c5-ab32-5a6545e5eb36",
+    "colId": "763f0968-37be-4a46-8abc-3f8349892299",
+    "containerId": "",
+    "name": "update",
+    "url": "{{BASE_PATH}}processor/update",
+    "method": "PUT",
+    "sortNum": 25000,
+    "created": "2022-11-01T18:05:52.965Z",
+    "modified": "2022-11-01T18:27:42.883Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"id\":\"2\",\n  \"name\":\"processor test2\",\n  \"description\":\"processor2 descpt\",\n  \"socket\":\"LGA112\",\n  \"typeMemory\":\"DDR3\",\n  \"pciExpress\":\"3.0\",\n  \"price\":\"450,00\",\n  \"image\":\"processor2.png\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "dfbb620f-a317-46ca-9ce6-afda5c0119d6",
+    "colId": "4a45b80f-381f-4637-a0f8-e6362dac4640",
+    "containerId": "",
+    "name": "update",
+    "url": "{{BASE_PATH}}motherboard/update",
+    "method": "PUT",
+    "sortNum": 25000,
+    "created": "2022-11-01T18:33:47.770Z",
+    "modified": "2022-11-01T18:33:51.411Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"id\":\"4\",\n  \"name\":\"motherboard test4\",\n  \"description\":\"motherboard4 descpt\",\n  \"socket\":\"LGA112\",\n  \"typeMemory\":\"DDR3\",\n  \"pciExpress\":\"3.0\",\n  \"price\":\"450,00\",\n  \"image\":\"motherboard4.png\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "3a9c2501-2704-4e36-98d4-0aa4e0b454c5",
+    "colId": "9c97fa05-80d6-47ff-b3bc-a1567af5b50e",
+    "containerId": "",
+    "name": "update",
+    "url": "{{BASE_PATH}}graphicscard/update",
+    "method": "PUT",
+    "sortNum": 40000,
+    "created": "2022-11-01T18:35:50.912Z",
+    "modified": "2022-11-01T18:35:50.912Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"id\":\"3\",\n  \"name\":\"graphics test3\",\n  \"description\":\"graphiuc3 descpt\",\n  \"pciExpress\":\"3.0\",\n  \"price\":\"903,00\",\n  \"image\":\"graphic3.png\"\n}",
+      "form": []
+    },
     "tests": []
   }
 ]
