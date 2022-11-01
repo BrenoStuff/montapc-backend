@@ -26,14 +26,14 @@ class MotherboardController{
         $id = $motherboard->create();
         
         $result["success"]["message"] = "Motherboard created successfully";
-        $result["success"]["id"] = $id;
-        $result["success"]["name"] = $name;
-        $result["success"]["description"] = $description;
-        $result["success"]["socket"] = $socket;
-        $result["success"]["typeMemory"] = $typeMemory;
-        $result["success"]["pciExpress"] = $pciExpress;
-        $result["success"]["price"] = $price;
-        $result["success"]["image"] = $image;
+        $result["motherboard"]["id"] = $id;
+        $result["motherboard"]["name"] = $name;
+        $result["motherboard"]["description"] = $description;
+        $result["motherboard"]["socket"] = $socket;
+        $result["motherboard"]["typeMemory"] = $typeMemory;
+        $result["motherboard"]["pciExpress"] = $pciExpress;
+        $result["motherboard"]["price"] = $price;
+        $result["motherboard"]["image"] = $image;
         Output::response($result);
     }
 
@@ -44,7 +44,14 @@ class MotherboardController{
         $listMotherboards = $motherboard->list();
 
         $result["success"]["message"] = "Motherboards listed successfully";
-        $result["success"]["data"] = $listMotherboards;
+        $result["motherboard"]["id"] = $id;
+        $result["motherboard"]["name"] = $name;
+        $result["motherboard"]["description"] = $description;
+        $result["motherboard"]["socket"] = $socket;
+        $result["motherboard"]["typeMemory"] = $typeMemory;
+        $result["motherboard"]["pciExpress"] = $pciExpress;
+        $result["motherboard"]["price"] = $price;
+        $result["motherboard"]["image"] = $image;
         Output::response($result);
     }
 
@@ -77,14 +84,14 @@ class MotherboardController{
 
         if($updated){
             $result["success"]["message"] = "Motherboard updated successfully";
-            $result["success"]["id"] = $id;
-            $result["success"]["name"] = $name;
-            $result["success"]["description"] = $description;
-            $result["success"]["socket"] = $socket;
-            $result["success"]["typeMemory"] = $typeMemory;
-            $result["success"]["pciExpress"] = $pciExpress;
-            $result["success"]["price"] = $price;
-            $result["success"]["image"] = $image;
+            $result["motherboard"]["id"] = $id;
+            $result["motherboard"]["name"] = $name;
+            $result["motherboard"]["description"] = $description;
+            $result["motherboard"]["socket"] = $socket;
+            $result["motherboard"]["typeMemory"] = $typeMemory;
+            $result["motherboard"]["pciExpress"] = $pciExpress;
+            $result["motherboard"]["price"] = $price;
+            $result["motherboard"]["image"] = $image;
             Output::response($result);
         } else {
             $result["error"]["message"] = "Motherboard not found to be updated";
@@ -107,7 +114,7 @@ class MotherboardController{
 
         if($deleted){
             $result["success"]["message"] = "Motherboard deleted successfully";
-            $result["success"]["id"] = $id;
+            $result["motherboard"]["id"] = $id;
             Output::response($result);
         } else {
             $result["error"]["message"] = "Motherboard not found to be deleted";

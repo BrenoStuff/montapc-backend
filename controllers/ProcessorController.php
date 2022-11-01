@@ -26,14 +26,14 @@ class ProcessorController{
         $id = $processor->create();
 
         $result["success"]["message"] = "Processor created successfully";
-        $result["success"]["id"] = $id;
-        $result["success"]["name"] = $name;
-        $result["success"]["description"] = $description;
-        $result["success"]["socket"] = $socket;
-        $result["success"]["typeMemory"] = $typeMemory;
-        $result["success"]["pciExpress"] = $pciExpress;
-        $result["success"]["price"] = $price;
-        $result["success"]["image"] = $image;
+        $result["processor"]["id"] = $id;
+        $result["processor"]["name"] = $name;
+        $result["processor"]["description"] = $description;
+        $result["processor"]["socket"] = $socket;
+        $result["processor"]["typeMemory"] = $typeMemory;
+        $result["processor"]["pciExpress"] = $pciExpress;
+        $result["processor"]["price"] = $price;
+        $result["processor"]["image"] = $image;
         Output::response($result);
     }
 
@@ -44,7 +44,7 @@ class ProcessorController{
         $listProcessors = $processor->list();
 
         $result["success"]["message"] = "Processors listed successfully";
-        $result["success"]["data"] = $listProcessors;
+        $result["processor"] = $listProcessors;
         Output::response($result);
     }
 
@@ -77,17 +77,17 @@ class ProcessorController{
 
         if($updated){
             $result["success"]["message"] = "Processor updated successfully";
-            $result["success"]["id"] = $id;
-            $result["success"]["name"] = $name;
-            $result["success"]["description"] = $description;
-            $result["success"]["socket"] = $socket;
-            $result["success"]["typeMemory"] = $typeMemory;
-            $result["success"]["pciExpress"] = $pciExpress;
-            $result["success"]["price"] = $price;
-            $result["success"]["image"] = $image;
+            $result["processor"]["id"] = $id;
+            $result["processor"]["name"] = $name;
+            $result["processor"]["description"] = $description;
+            $result["processor"]["socket"] = $socket;
+            $result["processor"]["typeMemory"] = $typeMemory;
+            $result["processor"]["pciExpress"] = $pciExpress;
+            $result["processor"]["price"] = $price;
+            $result["processor"]["image"] = $image;
             Output::response($result);
         }else{
-            $result["error"]["message"] = "Processor not found";
+            $result["error"]["message"] = "Processor not found to be updated";
             Output::response($result, 404);
         }
     }
@@ -107,7 +107,7 @@ class ProcessorController{
 
         if($deleted){
             $result["success"]["message"] = "Processor deleted successfully";
-            $result["success"]["id"] = $id;
+            $result["processor"]["id"] = $id;
             Output::response($result);
         }else{
             $result["error"]["message"] = "Processor not found to be deleted";

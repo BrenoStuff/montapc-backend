@@ -22,12 +22,12 @@ class GraphicsCardController{
         $id = $graphicsCard->create();
         
         $result["success"]["message"] = "Graphics card created successfully";
-        $result["success"]["id"] = $id;
-        $result["success"]["name"] = $name;
-        $result["success"]["description"] = $description;
-        $result["success"]["pciExpress"] = $pciExpress;
-        $result["success"]["price"] = $price;
-        $result["success"]["image"] = $image;
+        $result["graphicscard"]["id"] = $id;
+        $result["graphicscard"]["name"] = $name;
+        $result["graphicscard"]["description"] = $description;
+        $result["graphicscard"]["pciExpress"] = $pciExpress;
+        $result["graphicscard"]["price"] = $price;
+        $result["graphicscard"]["image"] = $image;
         Output::response($result);
     }
 
@@ -38,7 +38,7 @@ class GraphicsCardController{
         $listGraphicsCards = $graphicsCard->list();
 
         $result["success"]["message"] = "Graphics cards listed successfully";
-        $result["success"]["data"] = $listGraphicsCards;
+        $result["processor"] = $listGraphicsCards;
         Output::response($result);
     }
 
@@ -67,12 +67,12 @@ class GraphicsCardController{
 
         if($updated){
             $result["success"]["message"] = "Graphics card updated successfully";
-            $result["success"]["id"] = $id;
-            $result["success"]["name"] = $name;
-            $result["success"]["description"] = $description;
-            $result["success"]["pciExpress"] = $pciExpress;
-            $result["success"]["price"] = $price;
-            $result["success"]["image"] = $image;
+            $result["graphicscard"]["id"] = $id;
+            $result["graphicscard"]["name"] = $name;
+            $result["graphicscard"]["description"] = $description;
+            $result["graphicscard"]["pciExpress"] = $pciExpress;
+            $result["graphicscard"]["price"] = $price;
+            $result["graphicscard"]["image"] = $image;
             Output::response($result);
         } else {
             $result["error"]["message"] = "Graphics card not found to be updated";
@@ -95,7 +95,7 @@ class GraphicsCardController{
 
         if($deleted){
             $result["success"]["message"] = "Graphics card deleted successfully";
-            $result["success"]["id"] = $id;
+            $result["graphicscard"]["id"] = $id;
             Output::response($result);
         } else {
             $result["error"]["message"] = "Graphics card not found to be deleted";
