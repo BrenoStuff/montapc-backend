@@ -48,6 +48,42 @@ class ProcessorController{
         Output::response($result);
     }
 
+    public function listByMotherboard(){
+        Router::allowedMethod('GET');
+
+        $data = Input::getData();
+        if(!isset($data['socket'])){
+            $result["error"]["message"] = "Bad Request";
+            Output::response($result, 400);
+        }
+        $socket = $data['socket'];
+
+        $processor = new Processor(null, null, null, $socket, null, null, null, null);
+        $listProcessors = $processor->listByMotherboard();
+
+        $result["success"]["message"] = "Processors listed successfully";
+        $result["processor"] = $listProcessors;
+        Output::response($result);
+    }
+
+    public function listByGraphicscard(){
+        Router::allowedMethod('GET');
+
+        $data = Input::getData();
+        if(!isset($data['pciExpress'])){
+            $result["error"]["message"] = "Bad Request";
+            Output::response($result, 400);
+        }
+        $pciExpress = $data['pciExpress'];
+
+        $processor = new Processor(null, null, null, null, null, $pciExpress, null, null);
+        $listProcessors = $processor->listByGraphicscard();
+
+        $result["success"]["message"] = "Processors listed successfully";
+        $result["processor"] = $listProcessors;
+        Output::response($result);
+    }
+
     public function update(){
         Router::allowedMethod('PUT');
 

@@ -38,7 +38,25 @@ class GraphicsCardController{
         $listGraphicsCards = $graphicsCard->list();
 
         $result["success"]["message"] = "Graphics cards listed successfully";
-        $result["processor"] = $listGraphicsCards;
+        $result["graphicscard"] = $listGraphicsCards;
+        Output::response($result);
+    }
+
+    public function listByCompatibility(){
+        Router::allowedMethod('GET');
+
+        $data = Input::getData();
+        if(!isset($data['pciExpress'])){
+            $result["error"]["message"] = "Bad Request";
+            Output::response($result, 400);
+        }
+        $pciExpress = $data['pciExpress'];
+
+        $graphicsCard = new GraphicsCard(null, null, null, $pciExpress, null, null);
+        $listGraphicsCards = $graphicsCard->listByCompatibility();
+
+        $result["success"]["message"] = "Graphics cards listed successfully";
+        $result["graphicscard"] = $listGraphicsCards;
         Output::response($result);
     }
 

@@ -55,6 +55,24 @@ class MotherboardController{
         Output::response($result);
     }
 
+    public function listByProcessor(){
+        Router::allowedMethod('GET');
+
+        $data = Input::getData();
+        if(!isset($data['socket'])){
+            $result["error"]["message"] = "Bad Request";
+            Output::response($result, 400);
+        }
+        $socket = $data['socket'];
+
+        $motherboard = new Motherboard(null, null, null, $socket, null, null, null, null);
+        $listMotherboards = $motherboard->listByProcessor();
+
+        $result["success"]["message"] = "Motherboards listed successfully";
+        $result["motherboard"] = $listMotherboards;
+        Output::response($result);
+    }
+
     public function update(){
         Router::allowedMethod('PUT');
 

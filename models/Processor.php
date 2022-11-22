@@ -59,6 +59,44 @@ class Processor {
         }
     }
 
+    function listByGraphicsCard(){
+        $db = new Database();
+        $conn = $db->connect();
+
+        $sql = "SELECT processors.id, processors.name, processors.description, processors.socket, processors.typememory, processors.pciexpress, processors.price, processors.image
+        FROM processors
+        INNER JOIN graphicscards ON processors.pciexpress = graphicscards.pciexpress
+        WHERE processors.pciexpress = :pciexpress";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':pciexpress', $this->pciExpress);
+        try {
+            $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        } catch(PDOException $e) {
+            $db->dbError($e);
+        }
+    }
+
+    function listByMotherboard(){
+        $db = new Database();
+        $conn = $db->connect();
+
+        $sql = "SELECT processors.id, processors.name, processors.description, processors.socket, processors.typememory, processors.pciexpress, processors.price, processors.image
+        FROM processors
+        INNER JOIN motherboards ON processors.socket = motherboards.socket
+        WHERE processors.socket = :socket";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':socket', $this->socket);
+        try {
+            $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        } catch(PDOException $e) {
+            $db->dbError($e);
+        }
+    }
+
     function update(){
         $db = new Database();
         $conn = $db->connect();

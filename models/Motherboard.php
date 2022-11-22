@@ -59,6 +59,24 @@ class Motherboard {
         }
     }
 
+    public function listByProcessor(){
+        $db = new Database();
+        $conn = $db->connect();
+
+        $sql = "SELECT motherboards.id, motherboards.name, motherboards.description, motherboards.socket, motherboards.typememory, motherboards.pciexpress, motherboards.price, motherboards.image
+        FROM motherboards
+        INNER JOIN processors ON motherboards.socket = processors.socket WHERE motherboards.socket = :socket";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':socket', $this->socket);
+        try {
+            $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        } catch(PDOException $e) {
+            $db->dbError($e);
+        }
+    }
+
     function update(){
         $db = new Database();
         $conn = $db->connect();

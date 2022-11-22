@@ -54,6 +54,27 @@ class GraphicsCard {
         }
     }
 
+    function listByCompatibility(){
+        $db = new Database();
+        $conn = $db->connect();
+
+        $sql = "SELECT graphicscards.id, graphicscards.name, graphicscards.description, graphicscards.pciexpress, graphicscards.price, graphicscards.image
+                FROM graphicscards
+                INNER JOIN processors ON graphicscards.pciexpress = processors.pciexpress
+                INNER JOIN motherboards ON graphicscards.pciexpress = motherboards.pciexpress
+                WHERE graphicscards.pciexpress = :pciexpress";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':pciexpress', $this->pciExpress);
+        try {
+            $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $conn = null;
+            return $result;
+        } catch(PDOException $e) {
+            $db->dbError($e);
+        }
+    }
+
     function update(){
         $db = new Database();
         $conn = $db->connect();
