@@ -44,14 +44,7 @@ class MotherboardController{
         $listMotherboards = $motherboard->list();
 
         $result["success"]["message"] = "Motherboards listed successfully";
-        $result["motherboard"]["id"] = $id;
-        $result["motherboard"]["name"] = $name;
-        $result["motherboard"]["description"] = $description;
-        $result["motherboard"]["socket"] = $socket;
-        $result["motherboard"]["typeMemory"] = $typeMemory;
-        $result["motherboard"]["pciExpress"] = $pciExpress;
-        $result["motherboard"]["price"] = $price;
-        $result["motherboard"]["image"] = $image;
+        $result["motherboard"] = $listMotherboards;
         Output::response($result);
     }
 
