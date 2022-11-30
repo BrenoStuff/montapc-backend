@@ -65,9 +65,10 @@ class Motherboard {
 
         $sql = "SELECT motherboards.id, motherboards.name, motherboards.description, motherboards.socket, motherboards.typememory, motherboards.pciexpress, motherboards.price, motherboards.image
         FROM motherboards
-        INNER JOIN processors ON motherboards.socket = processors.socket WHERE motherboards.socket = :socket";
+        INNER JOIN processors ON motherboards.socket = processors.socket WHERE motherboards.socket = :socket AND motherboards.pciexpress = :pciExpress";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':socket', $this->socket);
+        $stmt->bindParam(':pciExpress', $this->pciExpress);
         try {
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
