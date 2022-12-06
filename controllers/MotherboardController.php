@@ -52,13 +52,15 @@ class MotherboardController{
         Router::allowedMethod('GET');
 
         $data = Input::getData();
-        if(!isset($data['socket'])){
+        if(!isset($data['socket']) ||
+            !isset($data['pciExpress'])){
             $result["error"]["message"] = "Bad Request";
             Output::response($result, 400);
         }
         $socket = $data['socket'];
+        $pciExpress = $data['pciExpress'];
 
-        $motherboard = new Motherboard(null, null, null, $socket, null, null, null, null);
+        $motherboard = new Motherboard(null, null, null, $socket, null, $pciExpress, null, null);
         $listMotherboards = $motherboard->listByProcessor();
 
         $result["success"]["message"] = "Motherboards listed successfully";
