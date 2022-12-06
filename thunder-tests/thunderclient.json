@@ -211,5 +211,81 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "21272b84-0281-44d9-8f75-165c4608c430",
+    "colId": "763f0968-37be-4a46-8abc-3f8349892299",
+    "containerId": "",
+    "name": "listByMotherboard",
+    "url": "{{BASE_PATH}}processor/listByMotherboard",
+    "method": "GET",
+    "sortNum": 40000,
+    "created": "2022-11-30T17:52:56.951Z",
+    "modified": "2022-11-30T17:52:56.951Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"socket\": 1\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "a705dae3-ea0e-4e85-a6e5-d198ce34d84c",
+    "colId": "763f0968-37be-4a46-8abc-3f8349892299",
+    "containerId": "",
+    "name": "listByGraphicscard",
+    "url": "{{BASE_PATH}}processor/listByGraphicscard",
+    "method": "GET",
+    "sortNum": 50000,
+    "created": "2022-12-06T16:45:41.480Z",
+    "modified": "2022-12-06T16:45:41.480Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"pciExpress\": 1\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "f4e13e99-1e15-4095-b0a4-f59b136d4b17",
+    "colId": "4a45b80f-381f-4637-a0f8-e6362dac4640",
+    "containerId": "",
+    "name": "listByProcessor",
+    "url": "{{BASE_PATH}}motherboard/listByProcessor",
+    "method": "GET",
+    "sortNum": 40000,
+    "created": "2022-12-06T17:04:24.796Z",
+    "modified": "2022-12-06T17:04:24.796Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"socket\": 1,\n  \"pciExpress\": 1\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "bcf111b9-3efe-412c-b601-c1dd24d03bf7",
+    "colId": "9c97fa05-80d6-47ff-b3bc-a1567af5b50e",
+    "containerId": "",
+    "name": "{{BASE_PATH}}graphicscard/listByCompatibility",
+    "url": "{{BASE_PATH}}graphicscard/listByCompatibility",
+    "method": "GET",
+    "sortNum": 50000,
+    "created": "2022-12-06T17:06:22.998Z",
+    "modified": "2022-12-06T17:06:22.998Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"pciExpress\": 1\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
