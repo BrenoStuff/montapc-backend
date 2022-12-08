@@ -5,7 +5,10 @@ class Router {
 
         $url = $_SERVER['REQUEST_URI']; // Get the url solicited
         $urlClean = str_replace(BASE_PATH,'',$url); // Clear the url solicited (remove the main path)
-        $urlArray = explode('/', $urlClean); // Divide the $urlClean by the Slash
+        $uppercaseUrl = array_map('ucfirst', explode('-', $urlClean)); // Divide the $urlClean by the Dash and put the first letter in uppercase (ex: get-together -> GetTogether)
+        $getTogetherUrl = implode("", $uppercaseUrl); // Join the $uppercaseUrl by nothing in the middle
+        $urlArray = explode('/', $getTogetherUrl); // Divide the $getTogetherUrl by the Slash
+        print_r($urlArray); die;
     
         if (isset($urlArray[0]) && $urlArray[0] != '' && isset($urlArray[1]) && $urlArray[1] != '') {
             $controller = $urlArray[0] . 'Controller';
