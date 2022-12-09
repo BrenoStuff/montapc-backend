@@ -54,6 +54,23 @@ class GraphicsCard {
         }
     }
 
+    function listById(){
+        $db = new Database();
+        $conn = $db->connect();
+
+        $sql = "SELECT * FROM graphicscards WHERE id = :id";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':id', $this->id);
+        try {
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            $conn = null;
+            return $result;
+        } catch(PDOException $e) {
+            $db->dbError($e);
+        }
+    }
+
     function listByCompatibility(){
         $db = new Database();
         $conn = $db->connect();

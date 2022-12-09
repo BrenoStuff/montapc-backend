@@ -42,6 +42,24 @@ class GraphicsCardController{
         Output::response($result);
     }
 
+    public function listById(){
+        Router::allowedMethod('GET');
+
+        if(isset($_GET['id'])){
+            $id = $_GET['id'];
+        } else {
+            $result['error']['message'] = "Bad Request";
+            Output::response($result, 400);
+        }
+
+        $graphicsCard = new GraphicsCard($id, null, null, null, null, null);
+        $selectedGraphicsCard = $graphicsCard->listById();
+
+        $result["success"]["message"] = "Graphics cards listed successfully";
+        $result["graphicscard"] = $selectedGraphicsCard;
+        Output::response($result);
+    }
+
     public function listByCompatibility(){
         Router::allowedMethod('GET');
 

@@ -48,6 +48,24 @@ class ProcessorController{
         Output::response($result);
     }
 
+    public function listById(){
+        Router::allowedMethod('GET');
+
+        if(isset($_GET['id'])){
+            $id = $_GET['id'];
+        } else {
+            $result['error']['message'] = "Bad Request";
+            Output::response($result, 400);
+        }
+
+        $processor = new Processor($id, null, null, null, null, null, null, null);
+        $selectedProcessor = $processor->listById();
+
+        $result["success"]["message"] = "Processors listed successfully";
+        $result["processor"] = $selectedProcessor;
+        Output::response($result);
+    }
+
     public function listByMotherboard(){
         Router::allowedMethod('GET');
 

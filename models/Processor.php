@@ -53,6 +53,24 @@ class Processor {
         try {
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $conn = null;
+            return $result;
+        } catch(PDOException $e) {
+            $db->dbError($e);
+        }
+    }
+
+    function listById(){
+        $db = new Database();
+        $conn = $db->connect();
+
+        $sql = "SELECT * FROM processors WHERE id = :id";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':id', $this->id);
+        try {
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            $conn = null;
             return $result;
         } catch(PDOException $e) {
             $db->dbError($e);
@@ -72,6 +90,7 @@ class Processor {
         try {
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $conn = null;
             return $result;
         } catch(PDOException $e) {
             $db->dbError($e);
@@ -91,6 +110,7 @@ class Processor {
         try {
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $conn = null;
             return $result;
         } catch(PDOException $e) {
             $db->dbError($e);

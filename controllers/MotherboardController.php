@@ -48,6 +48,24 @@ class MotherboardController{
         Output::response($result);
     }
 
+    public function listById(){
+        Router::allowedMethod('GET');
+
+        if(isset($_GET['id'])){
+            $id = $_GET['id'];
+        } else {
+            $result['error']['message'] = "Bad Request";
+            Output::response($result, 400);
+        }
+
+        $motherboard = new Motherboard($id, null, null, null, null, null, null, null);
+        $selectedMotherboard = $motherboard->listById();
+
+        $result["success"]["message"] = "Motherboard listed successfully";
+        $result["motherboard"] = $selectedMotherboard;
+        Output::response($result);
+    }
+
     public function listByProcessor(){
         Router::allowedMethod('GET');
 

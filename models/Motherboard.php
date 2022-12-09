@@ -59,6 +59,23 @@ class Motherboard {
         }
     }
 
+    public function listById(){
+        $db = new Database();
+        $conn = $db->connect();
+
+        $sql = "SELECT * FROM motherboards WHERE id = :id";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':id', $this->id);
+        try {
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            $conn = null;
+            return $result;
+        } catch(PDOException $e) {
+            $db->dbError($e);
+        }
+    }
+
     public function listByProcessor(){
         $db = new Database();
         $conn = $db->connect();
@@ -72,6 +89,7 @@ class Motherboard {
         try {
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $conn = null;
             return $result;
         } catch(PDOException $e) {
             $db->dbError($e);
