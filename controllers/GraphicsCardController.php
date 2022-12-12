@@ -61,7 +61,7 @@ class GraphicsCardController{
     }
 
     public function listByCompatibility(){
-        Router::allowedMethod('GET');
+        Router::allowedMethod('POST');
 
         $data = Input::getData();
         if(!isset($data['pciExpress'])){

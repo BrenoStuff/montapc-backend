@@ -67,7 +67,7 @@ class MotherboardController{
     }
 
     public function listByProcessor(){
-        Router::allowedMethod('GET');
+        Router::allowedMethod('POST');
 
         $data = Input::getData();
         if(!isset($data['socket']) ||

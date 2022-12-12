@@ -49,7 +49,7 @@ class ProcessorController{
     }
 
     public function listById(){
-        Router::allowedMethod('GET');
+        Router::allowedMethod('POST');
 
         if(isset($_GET['id'])){
             $id = $_GET['id'];
