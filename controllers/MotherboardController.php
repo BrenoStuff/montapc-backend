@@ -7,8 +7,8 @@ class MotherboardController{
         if(!isset($data['name']) ||
             !isset($data['description']) ||
             !isset($data['socket']) ||
-            !isset($data['typeMemory'])||
-            !isset($data['pciExpress']) ||
+            !isset($data['typememory'])||
+            !isset($data['pciexpress']) ||
             !isset($data['price']) ||
             !isset($data['image'])){
             $result["error"]["message"] = "Bad Request";
@@ -17,8 +17,8 @@ class MotherboardController{
         $name = $data['name'];
         $description = $data['description'];
         $socket = $data['socket'];
-        $typeMemory = $data['typeMemory'];
-        $pciExpress = $data['pciExpress'];
+        $typeMemory = $data['typememory'];
+        $pciExpress = $data['pciexpress'];
         $price = $data['price'];
         $image = $data['image'];
 
@@ -71,12 +71,12 @@ class MotherboardController{
 
         $data = Input::getData();
         if(!isset($data['socket']) ||
-            !isset($data['pciExpress'])){
+            !isset($data['pciexpress'])){
             $result["error"]["message"] = "Bad Request";
             Output::response($result, 400);
         }
         $socket = $data['socket'];
-        $pciExpress = $data['pciExpress'];
+        $pciExpress = $data['pciexpress'];
 
         $motherboard = new Motherboard(null, null, null, $socket, null, $pciExpress, null, null);
         $listMotherboards = $motherboard->listByProcessor();
@@ -94,8 +94,8 @@ class MotherboardController{
             !isset($data['name']) ||
             !isset($data['description']) ||
             !isset($data['socket']) ||
-            !isset($data['typeMemory'])||
-            !isset($data['pciExpress']) ||
+            !isset($data['typememory'])||
+            !isset($data['pciexpress']) ||
             !isset($data['price']) ||
             !isset($data['image'])){
             $result["error"]["message"] = "Bad Request";
@@ -105,8 +105,8 @@ class MotherboardController{
         $name = $data['name'];
         $description = $data['description'];
         $socket = $data['socket'];
-        $typeMemory = $data['typeMemory'];
-        $pciExpress = $data['pciExpress'];
+        $typeMemory = $data['typememory'];
+        $pciExpress = $data['pciexpress'];
         $price = $data['price'];
         $image = $data['image'];
 

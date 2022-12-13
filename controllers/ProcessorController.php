@@ -7,8 +7,8 @@ class ProcessorController{
         if(!isset($data['name']) ||
             !isset($data['description']) ||
             !isset($data['socket']) ||
-            !isset($data['typeMemory']) ||
-            !isset($data['pciExpress']) ||
+            !isset($data['typememory']) ||
+            !isset($data['pciexpress']) ||
             !isset($data['price']) ||
             !isset($data['image'])){
             $result["error"]["message"] = "Bad Request";
@@ -17,8 +17,8 @@ class ProcessorController{
         $name = $data['name'];
         $description = $data['description'];
         $socket = $data['socket'];
-        $typeMemory = $data['typeMemory'];
-        $pciExpress = $data['pciExpress'];
+        $typeMemory = $data['typememory'];
+        $pciExpress = $data['pciexpress'];
         $price = $data['price'];
         $image = $data['image'];
 
@@ -88,11 +88,11 @@ class ProcessorController{
         Router::allowedMethod('GET');
 
         $data = Input::getData();
-        if(!isset($data['pciExpress'])){
+        if(!isset($data['pciexpress'])){
             $result["error"]["message"] = "Bad Request";
             Output::response($result, 400);
         }
-        $pciExpress = $data['pciExpress'];
+        $pciExpress = $data['pciexpress'];
 
         $processor = new Processor(null, null, null, null, null, $pciExpress, null, null);
         $listProcessors = $processor->listByGraphicscard();
@@ -110,8 +110,8 @@ class ProcessorController{
             !isset($data['name']) ||
             !isset($data['description']) ||
             !isset($data['socket']) ||
-            !isset($data['typeMemory']) ||
-            !isset($data['pciExpress']) ||
+            !isset($data['typememory']) ||
+            !isset($data['pciexpress']) ||
             !isset($data['price']) ||
             !isset($data['image'])){
             $result["error"]["message"] = "Bad Request";
@@ -121,8 +121,8 @@ class ProcessorController{
         $name = $data['name'];
         $description = $data['description'];
         $socket = $data['socket'];
-        $typeMemory = $data['typeMemory'];
-        $pciExpress = $data['pciExpress'];
+        $typeMemory = $data['typememory'];
+        $pciExpress = $data['pciexpress'];
         $price = $data['price'];
         $image = $data['image'];
 

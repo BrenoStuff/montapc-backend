@@ -6,7 +6,7 @@ class GraphicsCardController{
         $data = Input::getData();
         if(!isset($data['name']) ||
             !isset($data['description']) ||
-            !isset($data['pciExpress']) ||
+            !isset($data['pciexpress']) ||
             !isset($data['price']) ||
             !isset($data['image'])){
             $result["error"]["message"] = "Bad Request";
@@ -14,7 +14,7 @@ class GraphicsCardController{
         }
         $name = $data['name'];
         $description = $data['description'];
-        $pciExpress = $data['pciExpress'];
+        $pciExpress = $data['pciexpress'];
         $price = $data['price'];
         $image = $data['image'];
 
@@ -64,11 +64,11 @@ class GraphicsCardController{
         Router::allowedMethod('POST');
 
         $data = Input::getData();
-        if(!isset($data['pciExpress'])){
+        if(!isset($data['pciexpress'])){
             $result["error"]["message"] = "Bad Request";
             Output::response($result, 400);
         }
-        $pciExpress = $data['pciExpress'];
+        $pciExpress = $data['pciexpress'];
 
         $graphicsCard = new GraphicsCard(null, null, null, $pciExpress, null, null);
         $listGraphicsCards = $graphicsCard->listByCompatibility();
@@ -85,7 +85,7 @@ class GraphicsCardController{
         if(!isset($data['id']) ||
             !isset($data['name']) ||
             !isset($data['description']) ||
-            !isset($data['pciExpress']) ||
+            !isset($data['pciexpress']) ||
             !isset($data['price']) ||
             !isset($data['image'])){
             $result["error"]["message"] = "Bad Request";
@@ -94,7 +94,7 @@ class GraphicsCardController{
         $id = $data['id'];
         $name = $data['name'];
         $description = $data['description'];
-        $pciExpress = $data['pciExpress'];
+        $pciExpress = $data['pciexpress'];
         $price = $data['price'];
         $image = $data['image'];
 
